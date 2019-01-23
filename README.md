@@ -1,9 +1,11 @@
 # Disaster Response Pipeline Project
 
 1. Graphs on the app main page
+
 ![](main.gif)
 
 2. Classification of a new message based on the ML algorithm
+
 ![](request.gif)
 
 ### Instructions:
