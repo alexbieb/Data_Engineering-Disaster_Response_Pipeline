@@ -15,10 +15,13 @@ from sqlalchemy import create_engine
 # creation of the app
 app = Flask(__name__)
 
-# tokenization of the text
-    # input : Message
-    # output : tokens of text that could be inserted in the ML model for classification
+# tokenization
 def tokenize(text):
+    '''
+tokenization of the text
+    input : Message
+    output : tokens of text that could be inserted in the ML model for classification
+    '''
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
 
