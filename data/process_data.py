@@ -10,7 +10,9 @@ def load_data(messages_filepath, categories_filepath):
     return messages.merge(categories,on='id')
     pass
 
-
+# Cleaning the data
+    # input : dataframe of all text messages and their categories
+    # output : clean dataframe that could be used as input for the ML algorithm    
 def clean_data(df):
     # create a dataframe of the 36 individual category columns
     categories = df['categories'].str.split(pat=';',expand=True)
@@ -41,11 +43,18 @@ def clean_data(df):
     df.drop_duplicates('id',inplace=True)
     return df
 
+# Saving the data in a SQL database
+    # input : 
+        # dataframe : dataframe that will be analyzed by the ML algoritm
+        # database_filename : database where the dataframe will be stored
+    # output : N/A 
+        # the function will store the dataframe in the SQL database
 def save_data(df, database_filename):
     engine = create_engine('sqlite:///{}'.format(database_filename))
     df.to_sql('messages', engine, index=False)
     pass  
 
+# Running the uploading, cleaning and downloading of the clean data        
 def main():
     if len(sys.argv) == 4:
 
