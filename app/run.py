@@ -1,3 +1,4 @@
+# import of the libraries
 import json
 import plotly
 import pandas as pd
@@ -11,9 +12,12 @@ from plotly.graph_objs import Bar
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
 
-
+# creation of the app
 app = Flask(__name__)
 
+# tokenization of the text
+    # input : Message
+    # output : tokens of text that could be inserted in the ML model for classification
 def tokenize(text):
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
